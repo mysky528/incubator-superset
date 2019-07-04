@@ -14,7 +14,9 @@
     "prod": "NODE_ENV=production node --max_old_space_size=4096 ./node_modules/webpack/bin/webpack.js -p --colors --progress",
     "build": "NODE_ENV=production webpack --colors --progress",
     "lint": "eslint --ignore-path=.eslintignore --ext .js,.jsx .",
-    "sync-backend": "babel-node --presets es2015 javascripts/syncBackend.js"
+    "sync-backend": "babel-node --presets es2015 javascripts/syncBackend.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -86,7 +88,8 @@
     "shortid": "^2.2.6",
     "supercluster": "https://github.com/georgeke/supercluster/tarball/ac3492737e7ce98e07af679623aad452373bbc40",
     "urijs": "^1.18.10",
-    "viewport-mercator-project": "^2.1.0"
+    "viewport-mercator-project": "^2.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
@@ -131,5 +134,6 @@
     "webpack": "^3.4.1",
     "webpack-manifest-plugin": "1.2.1",
     "webworkify-webpack": "2.0.5"
-  }
+  },
+  "snyk": true
 }
